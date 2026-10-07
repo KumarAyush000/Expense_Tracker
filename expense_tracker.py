@@ -2,6 +2,22 @@
 ====== EXPENSE TRACKER CODE ======
 """
 
+import json
+
+# Expense loader function
+def load_expense():
+    try:
+        with open("expense.json", 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+
+# Expense file saver
+def save_expense(expenses):
+    with open("expense.json", "w") as file:
+        json.dump(expenses, file, indent=4)
+
 
 # Add expense
 def add_expense(expenses):
