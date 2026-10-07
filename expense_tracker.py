@@ -163,17 +163,23 @@ def expense_tracker():
 
     while True:
         print("\n====== EXPENSE TRACKER ======")
-        print("1. Add expense")
-        print("2. View expense")
-        print("3. Search expense")
-        print("4. Calculate total expense")
-        print("5. Delete expense")
-        print("6. Exit")
+
+        menu = [
+            "Add expense",
+            "View expense",
+            "Search expense",
+            "Calculate total expense",
+            "Delete expense",
+            "Exit"
+        ]
+
+        for i, option in enumerate(menu, start=1):
+            print(f"{i}: {option}")
 
         try:
             menu_choice = int(input("Please select a choice: "))
 
-            if menu_choice < 1 or menu_choice > 6:
+            if menu_choice < 1 or menu_choice > len(menu)-1:
                 print("Please enter a valid choice!")
                 continue
 
