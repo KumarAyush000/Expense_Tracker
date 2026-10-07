@@ -195,7 +195,8 @@ def expense_tracker():
         try:
             menu_choice = int(input("Please select a choice: "))
 
-            if menu_choice < 1 or menu_choice > len(menu)-1:
+            # Invalid menu choice checker
+            if menu_choice < 1 or menu_choice >len(menu):
                 print("Please enter a valid choice!")
                 continue
 
