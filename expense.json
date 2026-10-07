@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Lunch",
+        "amount": 200.0,
+        "category": "Food"
+    },
+    {
+        "name": "Bus",
+        "amount": 50.0,
+        "category": "Transport"
+    },
+    {
+        "name": "Movie",
+        "amount": 300.0,
+        "category": "Entertainment"
+    }
+]

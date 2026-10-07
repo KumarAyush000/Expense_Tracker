@@ -5,7 +5,7 @@
 import json
 
 # Expense loader function
-def load_expense():
+def load_expenses():
     try:
         with open("expense.json", 'r') as file:
             return json.load(file)
@@ -14,7 +14,7 @@ def load_expense():
 
 
 # Expense file saver
-def save_expense(expenses):
+def save_expenses(expenses):
     with open("expense.json", "w") as file:
         json.dump(expenses, file, indent=4)
 
@@ -85,6 +85,8 @@ def add_expense(expenses):
             "amount": amount,
             "category": categories[category_choice]
         })
+
+        save_expenses(expenses)
 
         print(f"Expense: {expense_name} added successfully.\n")
         return
@@ -160,6 +162,7 @@ def delete_expense(expenses):
     for i, item in enumerate(expenses):
         if item["name"] == to_delete:
             deleted_item = expenses.pop(i)
+            save_expenses(expenses)
 
             print(
                 f"Expense: {deleted_item['name']} "
@@ -175,7 +178,7 @@ def delete_expense(expenses):
 
 # Main program
 def expense_tracker():
-    expenses = []
+    expenses =  load_expenses()
 
     while True:
         print("\n====== EXPENSE TRACKER ======")
